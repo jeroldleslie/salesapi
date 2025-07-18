@@ -14,10 +14,10 @@ type Config struct {
 func InitConfig() (*Config, error) {
 	config := &Config{
 		CSVPath:  "sales.csv",
-		Interval: 24,
+		Interval: 300,
 	}
 
-	intervalStr := strings.TrimSpace(os.Getenv("IMPORTER_INTERVAL_HOURS"))
+	intervalStr := strings.TrimSpace(os.Getenv("IMPORTER_INTERVAL_SECONDS"))
 	if intervalStr != "" {
 		invl, err := strconv.Atoi(intervalStr)
 		if err != nil {

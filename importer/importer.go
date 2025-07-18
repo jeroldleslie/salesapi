@@ -50,8 +50,8 @@ func (s *service) StartWorker(manager *RefreshManager) {
 	// Initial run
 	go s.triggerRefresh(manager)
 
-	// Background worker. This triggers data refresh every 24 hour
-	ticker := time.NewTicker(time.Duration(s.config.Interval) * time.Hour)
+	// Background worker. This triggers data refresh with the given period
+	ticker := time.NewTicker(time.Duration(s.config.Interval) * time.Second)
 	go func() {
 		for range ticker.C {
 			s.triggerRefresh(manager)

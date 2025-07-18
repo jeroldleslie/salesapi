@@ -3,7 +3,6 @@ module salesapi
 go 1.24.4
 
 require (
-	github.com/golang/mock v1.6.0
 	github.com/gorilla/mux v1.8.1
 	go.uber.org/zap v1.27.0
 	gorm.io/driver/postgres v1.6.0

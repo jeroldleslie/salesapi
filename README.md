@@ -36,7 +36,7 @@ CREATE DATABASE salesdb;
 ## Environment Variables
 ```
 export IMPORTER_CSV_PATH="sales.csv"
-export IMPORTER_INTERVAL_HOURS=24
+export IMPORTER_INTERVAL_SECONDS=300
 export DB_HOST=localhost
 export DB_USER=db
 export DB_PASSWORD=123
