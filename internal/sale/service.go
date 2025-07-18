@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"go.uber.org/zap"
 	"net/http"
+	"salesapi/internal/sale/entities"
 	"salesapi/internal/sale/repo"
 	"strconv"
 )
@@ -42,7 +43,7 @@ func (s *service) GetTopProducts(w http.ResponseWriter, r *http.Request) {
 		zap.Int("limit", limit),
 	)
 
-	products, err := s.repo.GetTopProducts(repo.GetTopProductsRequest{
+	products, err := s.repo.GetTopProducts(entities.GetTopProductsRequest{
 		From:     from,
 		To:       to,
 		Limit:    limit,

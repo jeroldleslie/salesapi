@@ -2,19 +2,11 @@ package repo
 
 import (
 	"gorm.io/gorm"
-	"salesapi/internal/sale/models"
+	"salesapi/internal/sale/entities"
 )
 
-type GetTopProductsRequest struct {
-	From     string
-	To       string
-	Limit    int
-	Category string
-	Region   string
-}
-
 type Repository interface {
-	GetTopProducts(req GetTopProductsRequest) ([]models.TopProduct, error)
+	GetTopProducts(req entities.GetTopProductsRequest) ([]entities.TopProduct, error)
 }
 
 type repository struct {
@@ -27,8 +19,8 @@ func NewSaleAnalysisRepository(db *gorm.DB) Repository {
 	}
 }
 
-func (s *repository) GetTopProducts(req GetTopProductsRequest) ([]models.TopProduct, error) {
-	var products []models.TopProduct
+func (s *repository) GetTopProducts(req entities.GetTopProductsRequest) ([]entities.TopProduct, error) {
+	var products []entities.TopProduct
 
 	query := s.db.Table("order_items").
 		Select("products.product_id, products.product_name, products.category, regions.name as region_name, SUM(order_items.quantity_sold) AS total_sold").

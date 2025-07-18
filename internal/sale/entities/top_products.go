@@ -1,4 +1,12 @@
-package models
+package entities
+
+type GetTopProductsRequest struct {
+	From     string
+	To       string
+	Limit    int
+	Category string
+	Region   string
+}
 
 type TopProduct struct {
 	ProductID   string `json:"product_id"`
