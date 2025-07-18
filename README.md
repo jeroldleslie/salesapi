@@ -41,7 +41,7 @@ export IMPORTER_INTERVAL_HOURS=24
 ---
 
 ## How to build and run the project
-- Unzip the project
+- Checkout the project from https://github.com/jeroldleslie/salesapi
 - Change the directory to the project folder
 - Run the below comment to build and run the application 
 
