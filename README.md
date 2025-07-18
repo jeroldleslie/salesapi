@@ -53,7 +53,7 @@ export DB_PORT=5432
   ```bash
   make build-run
   ```
-  Note: the table can be automatically created while running the application.
+  Note: the table will be automatically created while running the application.
 ---
 ## REST API Documentation
 
