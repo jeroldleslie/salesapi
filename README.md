@@ -57,10 +57,10 @@ export DB_PORT=5432
 ---
 ## REST API Documentation
 
-| Endpoint                     | Method | Description                                                                      | Query Parameters                                                                                             | Sample Response                                                                                                             |
-|------------------------------|--------|----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| `/api/sales/top-products`    | GET    | Get top-selling products based on quantity sold within a date range.             | `from` (required), `to` (required), `region` (optional), `category` (optional), `limit` (optional), `page` (optional, default=1) | `[{"product_id":"P789", "product_name":"Levi's 501 Jeans", "category":"Clothing", "region":"Asia", "total_sold":3}, {...}]` |
-| `/api/sales/refresh-data`    | POST   | Triggers manual CSV data import into the database.                               | None                                                                                                         | `HTTP 202 ACCEPTED`                                                                                                         |
+| Endpoint                     | Method | Description                                                                      | Query Parameters                                                                                   | Sample Response                                                                                                             |
+|------------------------------|--------|----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| `/api/sales/top-products`    | GET    | Get top-selling products based on quantity sold within a date range.             | `from` (required), `to` (required), `region` (optional), `category` (optional), `limit` (optional) | `[{"product_id":"P789", "product_name":"Levi's 501 Jeans", "category":"Clothing", "region":"Asia", "total_sold":3}, {...}]` |
+| `/api/sales/refresh-data`    | POST   | Triggers manual CSV data import into the database.                               | None                                                                                               | `HTTP 202 ACCEPTED`                                                                                                         |
 
 ---
 
