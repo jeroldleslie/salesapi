@@ -48,11 +48,15 @@ export DB_PORT=5432
 ## How to build and run the project
 - Checkout the project from https://github.com/jeroldleslie/salesapi
 - Change the directory to the project folder
-- Run the below comment to build and run the application 
+- Setup project
+```bash
+  make setup
+```
+- Run the below comment to build and run the application
 
-  ```bash
+```bash
   make build-run
-  ```
+```
   Note: the table will be automatically created while running the application.
 ---
 ## REST API Documentation
