@@ -37,6 +37,11 @@ CREATE DATABASE salesdb;
 ```
 export IMPORTER_CSV_PATH="sales.csv"
 export IMPORTER_INTERVAL_HOURS=24
+export DB_HOST=localhost
+export DB_USER=db
+export DB_PASSWORD=123
+export DB_NAME=salesdb
+export DB_PORT=5432
 ```
 ---
 
