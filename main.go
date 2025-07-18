@@ -9,6 +9,7 @@ import (
 	"salesapi/db"
 	"salesapi/importer"
 	"salesapi/internal/sale"
+	saleRepo "salesapi/internal/sale/repo"
 	appLog "salesapi/log"
 )
 
@@ -32,7 +33,9 @@ func main() {
 	// start data refresh worker
 	importerService.StartWorker(manager)
 
-	salesAnalytics := sale.NewSaleAnalysisService(gormDB, logger)
+	// Initialize SaleAnalysisService
+	saleAnalysisRepo := saleRepo.NewSaleAnalysisRepository(gormDB)
+	salesAnalytics := sale.NewSaleAnalysisService(saleAnalysisRepo, logger)
 
 	r := mux.NewRouter()
 
